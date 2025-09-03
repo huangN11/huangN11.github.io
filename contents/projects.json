@@ -13,7 +13,7 @@
     "media": [
       { "type": "image", "src": "assets/images/projects/synchronous-fifo.png" }
     ],
-    "link": "https://github.com/ivesound/Sync_fifo-Selfcheck_tb"
+    "link": "https://github.com/huangN11/Sync_fifo-Selfcheck_tb"
   },
   {
     "title": "Maze Navigation FireFighter Bot",
