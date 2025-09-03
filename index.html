@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nathan Huang — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/icons/favicon.png" type="image/png">
+</head>
+<body>
+  <!-- Side Navigation -->
+  <div id="mySidenav" class="side-nav">
+    <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+    <a href="#about-header-main">About</a>
+    <a href="#projects-content-inner">Projects</a>
+  </div>
+
+  <!-- Top Left Menu Button -->
+  <div class="header-nav">
+    <button class="menu-button" onclick="openNav()">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </button>
+  </div>
+
+  <main>
+    <section id="about" class="about-section">
+      <div class="about-container">
+        <!-- Content will be dynamically loaded from personal-info.json -->
+        <div id="main-about-content"></div>
+      </div>
+    </section>
+
+    <section id="main-white-box" class="content-section white-backdrop">
+      <div id="about-content-inner">
+        <h2 id="about-header-main" class="about-heading-white-backdrop">About</h2> <!-- Centered About heading in white backdrop -->
+        <div class="about-me-text-content">
+          <!-- About me paragraph will be dynamically loaded here -->
+        </div>
+      </div>
+
+      <div id="projects-content-inner">
+        <h2>Projects</h2>
+        <div class="projects-grid" id="projects-grid">
+          <!-- Project cards will be dynamically generated from projects.json -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span>. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+<!-- Lightbox for media expansion -->
+<div id="lightbox" class="lightbox-overlay">
+  <span class="lightbox-close-button" onclick="closeLightbox()">&times;</span>
+  <div class="lightbox-content">
+    <!-- Media will be dynamically loaded here -->
+  </div>
+</div>
+</html>

@@ -1,0 +1,74 @@
+[
+  {
+    "title": "FIFO + Verilog/ Python Testbench",
+    "date": "August 2025",
+    "paragraphs": [
+      "Synchronous circular FIFO memory module in written in Verilog with configurable data and address size, with two self-checking testbenches, one written in Verilog and one in Python. ",
+      "The implementation of the FIFO is circular and written in a modular fashion, with separate modules for memory and read/write pointers, as well as a top-level wrapper. Both test benches include a behavioural FIFO that is written to compare with the outputs of the actual FIFO, aiding with any waveform analysis when performing verification. Actual test cases include: writing random values then reading them, writing until full, draining until empty, overflow and underflow attempts.  ",
+      "This project was made since I am interested in design verification, so I taught myself Verilog, along with RTL design and testbench creation towards the end of my first year. "
+    ],
+    "skills": ["Python", "Verilog", "RTL design", "Testbench creation", "Waveform analysis"],
+    "description": "paragraph1\n\nparagraph2",
+    "technologies": ["Python", "Verilog", "RTL design", "Testbench creation", "Waveform analysis"],
+    "media": [
+      { "type": "image", "src": "assets/images/projects/synchronous-fifo.png" }
+    ],
+    "link": "https://github.com/ivesound/Sync_fifo-Selfcheck_tb"
+  },
+  {
+    "title": "Maze Navigation FireFighter Bot",
+    "date": "March 2024",
+    "paragraphs": [
+      "Autonomous robot powered by a PIC chip capable of navigating mazes and extinguishing fires using IR sensors for flame detection and wall avoidance. Custom PCBs designed in Traxmaker and Altium printed using UV light.",
+      "This firefighter robot is powered by a combination of AA and 9V batteries, regulated to 5V using an LM7805 voltage regulator with both 1000 µF capacitors to stabilize power during motor load changes and flyback diode protection to protect from EMF. Logic is handled by a PIC16F887 microchip programmed in BASIC, which manages motor, line detection, wall detection, fire detection, and LCD output. Dual DC motors are driven through an L293D H-bridge motor driver on a separate PCB to the PIC chip, which supplies current up to 600 mA per motor.",
+      "Fire detection is handled by a dedicated IR sensor at the top, which activates when a fire is detected. An LCD screen beside provides real-time debugging information, including sensor values and program state. Sensors used for navigation include an LED and a phototransistor pair mounted on the underside and analog rangefinders. The phototransistor is used to detect lines, allowing the robot to determine room entry and exit. Two analog infrared rangefinders provide distance measurements to detect and follow walls.",
+      "This was a high school project that I did in my final year for a class. "
+    ],
+    "skills": ["BASIC", "Custom PCB manufacturing", "Soldering", "Traxmaker", "Altium"],
+    "description": "paragraph1\n\nparagraph2\n\nparagraph3\n\nparagraph4",
+    "technologies": ["BASIC", "Custom PCB manufacturing", "Soldering", "Traxmaker", "Altium"],
+    "media": [
+      { "type": "image", "src": "assets/images/projects/firefighter-bot-1.png" },
+      { "type": "image", "src": "assets/images/projects/firefighter-bot-2.png" },
+      { "type": "video", "src": "assets/images/projects/firefighter-bot-video.mp4" },
+      { "type": "image", "src": "assets/images/projects/firefighter-bot-3.png" },
+      { "type": "image", "src": "assets/images/projects/firefighter-bot-4.png" }
+    ],
+    "link": ""
+  },
+  {
+    "title": "K-Shoot Mania Arcade Style Controller",
+    "date": "August 2024",
+    "paragraphs": [
+      "Custom HID Windows-compatible controller designed for the game 'K-Shoot Mania.' Made with bourn encoders, low profile cherry mx switches, an Arduino Pro Micro and custom 3D printed case and components.", 
+      "Custom components designed by me. Speedypotato’s <a href=\"https://github.com/speedypotato/Pocket-SDVX\" style=\"color: black;\">code</a> was used as a base, with slight modifications. Gameplay video is by me.",
+      "The idea for this project came from when travelling the summer after graduating high school. I ran into Sound Voltex (the more popular arcade version of this game) in China and then in Japan. Such arcades are uncommon in Canada, so I ended up cobbling something together in a few days with whatever I could find after I got home. Hence, there is no custom PCB, and everything is hotwired together. It initially lived its life out in a cardboard box before I got access to 3D printers on UW’s campus. "
+    ],
+    "skills": ["SolidWorks", "Soldering", "3D printing", "Splicing"],
+    "description": "Custom HID Windows-compatible controller designed for the game 'K-Shoot Mania.' Made with bourn encoders, low profile cherry mx switches, an Arduino Pro Micro and custom 3D printed case and components designed by me. Speedypotato’s <a href=\"https://github.com/speedypotato/Pocket-SDVX\" style=\"color: black;\">code</a> was used as a base, with slight modifications. Gameplay video is by me.\n\nThe idea for this project came from when travelling the summer after graduating high school. I ran into Sound Voltex (the more popular arcade version of this game) in China and then in Japan. Such arcades are uncommon in Canada, so I ended up cobbling something together in a few days with whatever I could find after I got home. Hence, there is no custom PCB, and everything is hotwired together. It initially lived its life out in a cardboard box before I got access to 3D printers on UW’s campus. ",
+    "technologies": ["SolidWorks", "Soldering", "3D printing", "Splicing"],
+    "media": [
+      { "type": "image", "src": "assets/images/projects/kshoot-controller.png" },
+      { "type": "video", "src": "assets/images/projects/kshoot-controller-video.mp4" }
+    ],
+    "link": ""
+  },
+  {
+    "title": "Autonomous Sumo Bot",
+    "date": "July 2023",
+    "paragraphs": [
+      "Autonomous robot powered by a PIC chip, designed to compete in a sumo ring by detecting, approaching, and pushing out opponents. Custom PCBs were designed in Traxmaker and printed using UV light.",
+      "This sumo bot is powered by AA/9V batteries with a 7805 voltage regulator and large capacitors to ensure stable operation. Its core logic is handled by a PIC16F628A microcontroller, which controls the motors, line detection, and opponent detection. The regulator steps the supply down to 5V for the PIC. Dual DC motors are controlled by the PIC chip but are driven by an L293D H-bridge on a separate motor driver board, providing current boosting up to 600 mA per motor. To prevent sudden current spikes during motor reversal, 1000 µF decoupling capacitors are included as well as flyback diodes for EMF protection.",
+      "For sensing, line detection is achieved with a Superbright LED and phototransistor pair, where reflected light is measured so that white surfaces produce <0.8V (logic 0) and black surfaces >1.8V (logic 1). Opponent detection is handled with an infrared LED and a Vishay TSSP4038 receiver. Programming is done in BASIC on the PIC microcontroller, with logic that enables spinning to search, charging forward when an opponent is detected, and turning away when a boundary line is sensed.",
+      "This was a high school project that I did in my junior year for a class."
+    ],
+    "skills": ["BASIC", "Custom PCB manufacturing", "Soldering", "Traxmaker"],
+    "description": "paragraph1\n\nparagraph2\n\nparagraph3\n\nparagraph4",
+    "technologies": ["BASIC", "Custom PCB manufacturing", "Soldering", "Traxmaker"],
+    "media": [
+      { "type": "image", "src": "assets/images/projects/sumo-bot-1.png" },
+      { "type": "image", "src": "assets/images/projects/sumo-bot-2.png" }
+    ],
+    "link": ""
+  }
+]
