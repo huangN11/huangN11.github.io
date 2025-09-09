@@ -54,13 +54,14 @@
     <p>&copy; <span id="year"></span>. All rights reserved.</p>
   </footer>
 
+  <!-- Lightbox for media expansion -->
+  <div id="lightbox" class="lightbox-overlay">
+    <span class="lightbox-close-button" onclick="closeLightbox()">&times;</span>
+    <div class="lightbox-content">
+      <!-- Media will be dynamically loaded here -->
+    </div>
+  </div>
+
   <script src="script.js" defer></script>
 </body>
-<!-- Lightbox for media expansion -->
-<div id="lightbox" class="lightbox-overlay">
-  <span class="lightbox-close-button" onclick="closeLightbox()">&times;</span>
-  <div class="lightbox-content">
-    <!-- Media will be dynamically loaded here -->
-  </div>
-</div>
 </html>
