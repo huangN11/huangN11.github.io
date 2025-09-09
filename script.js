@@ -133,11 +133,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             <button class="media-nav-button prev" onclick="navigateMedia(${index}, -1)"></button>
             <button class="media-nav-button next" onclick="navigateMedia(${index}, 1)"></button>
           ` : ''}
+          ${index === 0 && project.link ? `
+            <a href="${project.link}" target="_blank" class="external-link-icon">
+              <img src="assets/icons/external_link.png" alt="External Link" class="external-link-img">
+            </a>
+          ` : ''}
         </div>
         <div class="project-info">
           <h3 style="display: inline-block;">${project.title}</h3>
           ${project.date ? `<span class="project-date" style="float: right; color: #555;">${project.date}</span>` : ""}
-          ${project.skills ? `<p class="project-skills" style="color: #555;">${project.skills.join(", ")}</p>` : ""}
+          ${project.skills ? `<div class="project-skills">${project.skills.map(skill => `<span>${skill}</span>`).join('')}</div>` : ""}
           <div class="project-details-collapsible">
             <div class="project-description-truncated">
               <p>${project.paragraphs && Array.isArray(project.paragraphs) ? project.paragraphs.slice(0, 3).join('<br>') : project.description}</p>
@@ -150,7 +155,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               ${project.paragraphs && Array.isArray(project.paragraphs)
                 ? project.paragraphs.map(p => `<p>${p}</p>`).join('')
                 : `<p>${project.description}</p>`}
-              ${project.link ? `<p class="project-details-link">More details can be found <a href="${project.link}" target="_blank">here</a></p>` : ""}
+              ${project.link ? `<p class="project-details-link">${index === 0 ? '<a href="' + project.link + '" target="_blank">Github</a>' : 'More details can be found <a href="' + project.link + '" target="_blank">here</a>'}</p>` : ""}
             </div>
           </div>
           <button class="toggle-details-button" onclick="toggleProjectDetails(${index})">
@@ -168,8 +173,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         mediaItems[0].classList.add('active');
       }
       
-      // Add click listener to the project card for redirection if a link exists
-      if (project.link) {
+      // Add click listener to the project card for redirection if a link exists (except for FIFO project)
+      if (project.link && index !== 0) {
         projectCard.addEventListener('click', (event) => {
           // Prevent redirection if click is on an interactive element within the card
           const interactiveElements = ['.toggle-details-button', '.media-nav-button', 'a', 'video'];
